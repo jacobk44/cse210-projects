@@ -9,7 +9,9 @@ class Program
         int gradePercent = int.Parse(userInput);
 
         string letter = "";
+        string sign = "";
 
+        // Determine letter grade
         if (gradePercent >= 90)
         {
             letter = "A";
@@ -31,15 +33,36 @@ class Program
             letter = "F";
         }
 
-        Console.WriteLine($"Your grade letter is {letter}");
+        // Determine the sign
+        int lastDigit = gradePercent % 10;
 
+        if (letter != "A" && letter != "F")
+        {
+            if (lastDigit >= 7)
+            {
+                sign = "+";
+            }
+            else if (lastDigit < 3)
+            {
+                sign = "-";
+            }
+        }
+        else if (letter == "A" && gradePercent < 93)
+        {
+            sign = "-";  // Only A and A- allowed
+        }
+
+        // Print final grade
+        Console.WriteLine($"Your grade letter is {letter}{sign}");
+
+        // Extra message
         if (gradePercent >= 70)
         {
-            Console.WriteLine("Congartulation! You have qualify for the exam? ");
+            Console.WriteLine("Congratulations! You have qualified for the exam.");
         }
         else
         {
-            Console.WriteLine("Stay focus you can do better try kicking. ");
+            Console.WriteLine("Stay focused — you can do better, keep trying!");
         }
     }
 }
