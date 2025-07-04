@@ -1,5 +1,4 @@
 using System;
-using System.Data;
 
 class Program
 {
@@ -28,3 +27,40 @@ class Program
         }
     }
 }
+
+
+
+// Stretch Requirement 
+
+// using System;
+
+// class Program
+// {
+//     static void Main(string[] args)
+//     {
+//         Random randomGenerateNumber = new Random();
+//         int magicNumber = randomGenerateNumber.Next(1, 100);
+
+//         int guessNumber = -1;
+
+//         while (guessNumber != magicNumber)
+//         {
+//             Console.Write("What is your guessNumber? ");
+//             guessNumber = int.Parse(Console.ReadLine());
+
+//             if (magicNumber > guessNumber)
+//             {
+//                 Console.WriteLine("Higher");
+//             }
+//             else if (magicNumber < guessNumber)
+//             {
+//                 Console.WriteLine("Lower");
+//             }
+//             else
+//             {
+//                 Console.WriteLine("You can guessed it. ");
+//             }
+
+//         }
+//     }
+// }
