@@ -1,27 +1,30 @@
 using System;
+using System.Globalization;
+using System.Reflection;
 
 class Program
 {
     static void Main(string[] args)
     {
-        WelcomeMessage();
+        DisplayWelcomeMessage();
 
-        string userName = PromptUserName();
+        string userName = PropmtUserName();
         int userNumber = PromptUserNumber();
 
-        int squaredNumber = SquareNumber(userNumber);
+        int squareNumber = SquareNumber(userNumber);
 
-        DisplayResult(userName, squaredNumber);
+        DisplayResult(userName, squareNumber);
+
     }
 
-    static void WelcomeMessage()
+    static void DisplayWelcomeMessage()
     {
-        Console.WriteLine("Welcome to the program!");
+        Console.WriteLine("Welcome to the Program!");
     }
 
-    static string PromptUserName()
+    static string PropmtUserName()
     {
-        Console.Write("Please enter your name: ");
+        Console.Write("What is your name? ");
         string name = Console.ReadLine();
 
         return name;
@@ -29,7 +32,7 @@ class Program
 
     static int PromptUserNumber()
     {
-        Console.Write("Please enter your favorite number: ");
+        Console.Write("Please enter your favourite number? ");
         int number = int.Parse(Console.ReadLine());
 
         return number;
@@ -38,11 +41,11 @@ class Program
     static int SquareNumber(int number)
     {
         int square = number * number;
+
         return square;
     }
 
-    static void DisplayResult(string name, int square)
-    {
-        Console.WriteLine($"{name}, the square of your number is {square}");
+    static void DisplayResult(string name, int square) {
+        Console.WriteLine($"{name} the square of your number is {square}");
     }
 }
