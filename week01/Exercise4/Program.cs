@@ -50,5 +50,4 @@ class Program
         }
         Console.WriteLine($"The largest number is {max}");
     }
-
-}
+}                            
