@@ -13,6 +13,7 @@ public class Entry
     // Display the entry's date, prompt, and response in a single line.
     public void Display()
     {
-        Console.WriteLine($"{_date} {_promptText} {_entryText}");
+        Console.WriteLine($"{_date} {_promptText} ");
+        Console.WriteLine($"{ _entryText}");
     }
 }

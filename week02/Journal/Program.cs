@@ -39,8 +39,9 @@ class Program
                     // Ask the user to respond
                     // Saves the response, prompt and today's date in a new entry object
                     string prompt = promptGenerator.GetRandomPrompt();
-                    Console.WriteLine($"\nPrompt: {prompt}");
+                    Console.WriteLine($"\nPrompt {prompt}");
                     Console.Write("Your response: ");
+                    Console.Write(">");
                     string response = Console.ReadLine();
 
                     // Create and add the entry to the journal 

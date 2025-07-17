@@ -39,7 +39,8 @@ public class Journal
             foreach (Entry entry in _entries)
             {
                 // Write each entry as a single line with date, prompt, and response
-                writerFile.WriteLine($"{entry._date} {entry._promptText} {entry._entryText}");
+                writerFile.WriteLine($"{entry._date} {entry._promptText}");
+                writerFile.WriteLine($"{entry._entryText}");
             }
         }
     }
