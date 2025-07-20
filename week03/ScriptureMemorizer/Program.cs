@@ -1,40 +1,54 @@
+
+// EXCEEDS REQUIREMENTS:
+// 1. Introduced a Scripture Library that holds multiple scriptures.
+// 2. Randomly selects one scripture from the library for each session,
+//    making the program more dynamic and useful for long-term study.
+// 
+// These features make the program more versatile and helpful for users 
+// who want variety and challenge when memorizing scriptures.
+
+
 using System;
 
 class Program
 {
     static void Main(string[] args)
-    {   // Create a reference for the scripture (Proverbs 3:5-6)
-        Reference reference = new Reference("Provebrs", 3, 5, 6);
-        
-        // Full scripture text
-        string text = "Trust in the Lord with all your heart and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy path. ";
+    {
+        // Create a scripture library
+        ScriptureLibrary library = new ScriptureLibrary();
 
-        // Create a scripture object from the reference and text
-        Scripture scripture = new Scripture(reference, text);
+        // Add multiple scriptures
+        library.AddScripture(new Scripture(
+            new Reference("Proverbs", 3, 5, 6),
+            "Trust in the Lord with all your heart and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy path."));
 
-        // Loop untill all words are hidden
+        library.AddScripture(new Scripture(
+            new Reference("John", 3, 16),
+            "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life."));
+
+        library.AddScripture(new Scripture(
+            new Reference("Philippians", 4, 13),
+            "I can do all things through Christ who strengthens me."));
+
+        // Get a random scripture from the library
+        Scripture scripture = library.GetRandomScripture();
+
+        // Loop until all words are hidden
         while (!scripture.IsCompletelyHidden())
         {
-            // Clear the console screen
             Console.Clear();
-
-            // Display the current state for the scripture. 
             Console.WriteLine(scripture.GetDisplayText());
-
-            // Prompt the user to press "Enter" or type "Quit"
-            Console.WriteLine("\nPress Enter to hide more words or type  'quit' to exit");
+            Console.WriteLine("\nPress Enter to hide more words or type 'quit' to exit");
             string input = Console.ReadLine().Trim().ToLower();
 
-            // If the user type "Quit" end the program.
             if (input == "quit") return;
 
-            // Hide a few (3) random words
             scripture.HideRandomWords(3);
-
-            // Finally display when all are hidden
-            Console.Clear();
-            Console.WriteLine(scripture.GetDisplayText());
-            Console.WriteLine("\nAll words are hidden. Program ended");
         }
+
+        // Final message when all words are hidden
+        Console.Clear();
+        Console.WriteLine(scripture.GetDisplayText());
+        Console.WriteLine("\nAll words are hidden. Program ended.");
     }
 }

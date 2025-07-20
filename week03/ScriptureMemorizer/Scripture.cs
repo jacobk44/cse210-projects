@@ -59,4 +59,12 @@ public class Scripture
         return true;
     }
 
+      public void ShowAllWords()
+    {
+        foreach (Word word in _words)
+        {
+            word.Show();
+        }
+    }
+
 }
