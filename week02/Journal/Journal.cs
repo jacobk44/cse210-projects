@@ -24,7 +24,7 @@ public class Journal
         }
 
         // Save entries automatically after displaying
-        SaveToFile("myActivities.csv");
+        SaveToFile("myActivities.txt");
     }
 
     // Saves all entries to a file (hardcoded to "myActivities.txt")

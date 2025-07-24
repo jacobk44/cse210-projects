@@ -47,7 +47,8 @@ class Program
                     // Create and add the entry to the journal 
                     Entry newEntry = new Entry
                     {
-                        _date = DateTime.Now.ToString("yyyy-MM-dd"),
+                        // _date = DateTime.Now.ToString("yyyy-MM-dd"),
+                        _date = DateTime.Now.ToShortDateString(),
                         _promptText = prompt,
                         _entryText = response
                     };
