@@ -28,7 +28,7 @@ public class Video
 
     public void DidplayInfo()
     {
-        Console.WriteLine($"Video {_title}");
+        Console.WriteLine($"Video: {_title}");
         Console.WriteLine($"Author: {_author}");
         Console.WriteLine($"Length: {_lengthInSeconds}");
         Console.WriteLine($"Comments: {GetLengthInSeconds()}");
