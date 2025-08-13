@@ -33,10 +33,10 @@ public abstract class Goal
 
     public abstract void RecordEvent();
 
-    public abstract bool isComplete();
+    public abstract bool IsComplete();
 
     public virtual string GetDetailsString(){
-        string status = isComplete() ? "[x]" : "[]";
+        string status = IsComplete() ? "[x]" : "[]";
         return $"{status} {_name} {_description}";
     }
 

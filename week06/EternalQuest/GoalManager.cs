@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Formats.Asn1;
-using System.Net.NetworkInformation;
+
 
 public class GoalManager
 {
@@ -99,7 +98,7 @@ public class GoalManager
         Console.Write("What is the short description of it? ");
         string description = Console.ReadLine();
 
-        Console.Write("What is the amount of point associated with this goal ");
+        Console.Write("What is the amount of point associated with this goal? ");
         int points = int.Parse(Console.ReadLine());
 
         switch (typeChoice)
@@ -111,9 +110,9 @@ public class GoalManager
                 _goals.Add(new Eternal(name, description, points));
                 break;
             case "3":
-                Console.Write("How many times does this goal need to be accomplish for a bonus ?");
+                Console.Write("How many times does this goal need to be accomplish for a bonus? ");
                 int target = int.Parse(Console.ReadLine());
-                Console.Write("What is the bonus of accomplishing it that may times");
+                Console.Write("What is the bonus of accomplishing it that may times? ");
                 int bonus = int.Parse(Console.ReadLine());
                 _goals.Add(new ChecklistGoal(name, description, points, target, bonus));
                 break;

@@ -9,14 +9,14 @@ public class Eternal : Goal
     }
     public override void RecordEvent()
     { }
-    public override bool isComplete()
+    public override bool IsComplete()
     {
         return false;
     }
     
         public override string GetDetailsString()
     {
-        string status = isComplete() ? "[x]" : "[]";
+        string status = IsComplete() ? "[x]" : "[]";
         return $"{status} {_name} ({_description})";
     }
     public override string GetStringPresentation()

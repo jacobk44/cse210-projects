@@ -1,0 +1,4 @@
+0
+Simple Goal:WWWWW (DDDD) 100 False
+Eternal Goal: FFFFF (GGGGGG) 50
+ChecklistGoal: DDDDD (VVVVV) 50 500 0/3

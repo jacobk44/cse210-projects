@@ -24,13 +24,13 @@ public class ChecklistGoal : Goal
         _amountCompleted++;
     }
 
-    public override bool isComplete()
+    public override bool IsComplete()
     {
         return _amountCompleted >= _target;
     }
     public override string GetDetailsString()
     {
-        string status = isComplete() ? "[x]" : "[]";
+        string status = IsComplete() ? "[x]" : "[]";
         return $"{status} {_name} ({_description}) -- Currently Completed {_amountCompleted}/{_target} ";
     }
 

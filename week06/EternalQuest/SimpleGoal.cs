@@ -18,7 +18,7 @@ public class SimpleGoal : Goal
 
     }
 
-    public override bool isComplete()
+    public override bool IsComplete()
     {
         return _isComplete;
 
@@ -26,7 +26,7 @@ public class SimpleGoal : Goal
 
     public override string GetDetailsString()
     {
-        string status = isComplete() ? "[x]" : "[]";
+        string status = IsComplete() ? "[x]" : "[]";
         return $"{status} {_name} ({_description})";
     }
 
